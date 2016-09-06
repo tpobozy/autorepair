@@ -1,0 +1,120 @@
+body {
+    padding-top: 75px;
+}
+
+nav .nav-actions {
+    margin-top: 10px;
+    margin-left: 25px;
+    display: inline-block;
+}
+
+nav .nav-menu {
+    /*font-weight: bold;*/
+    color: #333;
+    margin-left: -10px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #333;
+    font-size: 16px;
+}
+
+.help-info {
+    font-size: 11px;
+    color: #999;
+}
+
+form label {
+    font-weight: normal;
+}
+
+form label.required {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 2px;
+    box-shadow: none;
+}
+.form-control:focus {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.025) inset, 0 0 3px rgba(102, 175, 233, 0.5)
+}
+
+.tab-content .tab-pane {
+    padding-top: 15px;
+}
+
+.nav-tabs .active a {
+    font-weight: bold;
+}
+
+.input-yellow {
+    background-color: lightgoldenrodyellow;
+}
+
+.ui-autocomplete.ui-widget {
+    font-size: 14px;
+}
+.ui-autocomplete li a {
+    display: block;
+}
+.ui-name-search .s-name {
+    display: block;
+    font-weight: bold;
+    font-size: 15px;
+    color: #333;
+}
+.ui-name-search .s-address {
+    display: block;
+    font-size: 12px;
+    color: #999;
+}
+.ui-vin-search .s-vin {
+    display: block;
+    font-weight: bold;
+    font-size: 12px;
+    color: #333;
+}
+.ui-vin-search .s-make {
+    display: inline-block;
+    font-size: 13px;
+    color: #666;
+    padding-right: 5px;
+}
+.ui-vin-search .s-model {
+    display: inline-block;
+    font-size: 13px;
+    color: #666;
+    padding-right: 5px;
+}
+.ui-vin-search .s-year {
+    display: inline-block;
+    font-size: 13px;
+    color: #666;
+    padding-right: 10px;
+}
+.ui-vin-search .s-license-number {
+    display: inline-block;
+    font-size: 13px;
+    color: #666;
+}
+
+#services-copy-tr,
+#products-copy-tr {
+    position: relative;
+}
+#services-copy-tr td,
+#products-copy-tr td {
+    border-top: 1px solid transparent;
+}
+#services-copy-tr .btn-link,
+#products-copy-tr .btn-link {
+    cursor: pointer;
+    position: absolute;
+    right: -40px;
+    top: -36px;
+}
+#table-services th ,
+#table-products th {
+    vertical-align: middle;
+}
