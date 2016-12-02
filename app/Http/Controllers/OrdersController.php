@@ -52,9 +52,10 @@ class OrdersController extends Controller
      */
     public function index()
     {
+        $filters = (new OrdersGrid())->filters();
         $grid = (new OrdersGrid())->grid();
 
-        return view('orders.index', compact('grid'));
+        return view('orders.index', compact('grid', 'filters'));
     }
 
     /**
@@ -164,6 +165,7 @@ class OrdersController extends Controller
         $order->services()->delete();
 
         $services = $request->input('services');
+        // remove template record
         unset($services['#number#']);
 
         foreach ($services as $key => $service) {
@@ -181,6 +183,7 @@ class OrdersController extends Controller
         $order->products()->delete();
 
         $products = $request->input('products');
+        // remove template record
         unset($products['#number#']);
         
         foreach ($products as $key => $product) {
@@ -243,8 +246,6 @@ class OrdersController extends Controller
         $order = Order::findOrFail($id);
 
         $data = $order->toArray();
-        $data['fuel'] = $order->html_fuel();
-
 
         $pdf = \PDF::loadView('orders.print_service', $data);
 

@@ -7,7 +7,9 @@
             <div class="panel-heading">Orders</div>
 
             <div class="panel-body">
-                {!! $grid !!} 
+                {!! $filters !!}
+                <br>
+                {!! $grid !!}
             </div>
         </div>
     </div>
