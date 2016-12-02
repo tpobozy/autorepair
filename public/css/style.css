@@ -112,9 +112,16 @@ form label.required {
     cursor: pointer;
     position: absolute;
     right: -40px;
-    top: -36px;
+    top: -40px;
 }
 #table-services th ,
 #table-products th {
     vertical-align: middle;
+}
+
+.panel-orders a.print {
+    color: #999;
+}
+.panel-orders a.print:hover {
+    color: #23527c;
 }
