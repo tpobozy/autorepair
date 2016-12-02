@@ -21,7 +21,7 @@
                 </ul>
 
 
-                <div class="tab-content">
+                <div class="tab-content clearfix">
                     <div role="tabpanel" class="tab-pane active" id="zlecenie">
                         @include('orders/partials/zlecenie_naprawy', ['order' => null] )
                     </div>
@@ -58,7 +58,7 @@
     form h3 {
         margin-top: 20px;
         margin-bottom: 0px;
-        font-size: 22px;
+        font-size: 20px;
     }
     form hr {
         margin-top: 10px;

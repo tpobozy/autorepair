@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <span class="help-block pull-right">
-                    <a class="btn btn-default" href="{{ route('orders.print_order', $order->id) }}" ><i class="fa fa-print" "></i> drukuj</a>
+                    <a class="btn btn-sm btn-default" href="{{ route('orders.print_order', $order->id) }}" ><i class="fa fa-print" "></i> drukuj</a>
                 </span>
             </div>
         </div>
@@ -317,7 +317,9 @@
         </div>
     </div>
 
-    
+
+    <br>
+
     <h3>Usterki zgłaszane przez klienta</h3>
     <hr>
 
@@ -350,5 +352,80 @@
             @endif
         </div>
     </div>
+
+
+    <br>
+    
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group{{ $errors->has('is_park_outside') ? ' has-error' : '' }}">
+                <label class="col-sm-6 control-label">Zgadzam się na wystawienie samochodu poza teren warsztatu</label>
+
+                <div class="col-sm-6">
+
+                    <label class="radio-inline">
+                        <input type="radio" name="is_park_outside" value="2" {{ ($order AND $order->is_park_outside == 2) ? 'checked' : '' }} > tak
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="is_park_outside" value="1" {{ ($order AND $order->is_park_outside == 1) ? 'checked' : '' }} > nie
+                    </label>
+
+                    @if ($errors->has('fuel'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('is_park_outside') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="form-group{{ $errors->has('is_test_drive') ? ' has-error' : '' }}">
+                <label class="col-sm-6 control-label">Zgadzam się na wykonanie jazdy próbnej</label>
+
+                <div class="col-sm-6">
+
+                    <label class="radio-inline">
+                        <input type="radio" name="is_test_drive" value="2" {{ ($order AND $order->is_test_drive == 2) ? 'checked' : '' }} > tak
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="is_test_drive" value="1" {{ ($order AND $order->is_test_drive == 1) ? 'checked' : '' }} > nie
+                    </label>
+
+                    @if ($errors->has('fuel'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('is_test_drive') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="form-group{{ $errors->has('is_keep_parts') ? ' has-error' : '' }}">
+                <label class="col-sm-6 control-label">Zostawić wymontowne części do dyspozycji klienta</label>
+
+                <div class="col-sm-6">
+
+                    <label class="radio-inline">
+                        <input type="radio" name="is_keep_parts" value="2" {{ ($order AND $order->is_keep_parts == 2) ? 'checked' : '' }} > tak
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="is_keep_parts" value="1" {{ ($order AND $order->is_keep_parts == 1) ? 'checked' : '' }} > nie
+                    </label>
+
+                    @if ($errors->has('fuel'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('is_keep_parts') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+            
 </div>
 

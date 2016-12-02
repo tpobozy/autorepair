@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <span class="help-block pull-right">
-                    <a class="btn btn-default" href="{{ route('orders.print_service', $order->id) }}" ><i class="fa fa-print" "></i> drukuj</a>
+                    <a class="btn btn-sm btn-default" href="{{ route('orders.print_service', $order->id) }}" ><i class="fa fa-print" "></i> drukuj</a>
                 </span>
             </div>
         </div>
