@@ -26,6 +26,11 @@ class Order extends Model
         'symptoms',
         'engine_power',
         'fuel',
+        'review',
+        'fuel_level',
+        'is_test_drive',
+        'is_park_outside',
+        'is_keep_parts',
     ];
 
     public function car()
