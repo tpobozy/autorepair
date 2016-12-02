@@ -38,7 +38,7 @@ class StoreOrderRequest extends Request
             'engine_size'   => 'max:5',
             'radio_code'    => 'max:4',
             'vin'           => 'required|max:17',
-            //'odometer' => 'max:10',
+            'odometer'      => 'max:10',
             // order
             'number'        => 'required|unique:orders|max:20',
             'date'          => 'date_format:Y-m-d',

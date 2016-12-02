@@ -258,6 +258,48 @@
                 </div>
             </div>
             <div class="col-sm-6">
+                <div class="form-group{{ $errors->has('odometer') ? ' has-error' : '' }}">
+                    <label class="col-sm-6 control-label">Stan licznika</label>
+
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="odometer" id="odometer" value="{{ old('odometer', ($order) ? $order->odometer : null) }}">
+
+                        @if ($errors->has('odometer'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('odometer') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group{{ $errors->has('fuel_level') ? ' has-error' : '' }}">
+                    <label class="col-sm-6 control-label">Poziom zbiornika paliwa</label>
+
+                    <div class="col-sm-6">
+
+                        <select class="form-control selectpicker" name="fuel_level" >
+                            <option value=""></option>
+                            <option value="1" {{ ($order AND $order->fuel_level == 1) ? 'selected' : '' }}>0 (rezerwa)</option>
+                            <option value="25" {{ ($order AND $order->fuel_level == 25) ? 'selected' : '' }}>1/4</option>
+                            <option value="50" {{ ($order AND $order->fuel_level == 50) ? 'selected' : '' }}>1/2</option>
+                            <option value="75" {{ ($order AND $order->fuel_level == 75) ? 'selected' : '' }}>3/4</option>
+                            <option value="100" {{ ($order AND $order->fuel_level == 100) ? 'selected' : '' }}>1</option>
+                        </select>
+
+                        @if ($errors->has('fuel_level'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('fuel_level') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
                 <div class="form-group{{ $errors->has('radio_code') ? ' has-error' : '' }}">
                     <label class="col-sm-6 control-label">Kod radia</label>
 
@@ -275,9 +317,9 @@
         </div>
     </div>
 
+    
     <h3>Usterki zgłaszane przez klienta</h3>
     <hr>
-
 
     <div class="form-group{{ $errors->has('symptoms') ? ' has-error' : '' }}">
 
@@ -287,6 +329,23 @@
             @if ($errors->has('symptoms'))
                 <span class="help-block">
                     <strong>{{ $errors->first('symptoms') }}</strong>
+                </span>
+            @endif
+        </div>
+    </div>
+
+
+    <h3>Oględziny pojazdu</h3>
+    <hr>
+
+    <div class="form-group{{ $errors->has('review') ? ' has-error' : '' }}">
+
+        <div class="col-sm-11 col-sm-offset-1">
+            <textarea class="form-control" name="review" >{{ old('review', ($order) ? $order->review : null) }}</textarea>
+
+            @if ($errors->has('review'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('review') }}</strong>
                 </span>
             @endif
         </div>
