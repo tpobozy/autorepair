@@ -1,20 +1,8 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
 
 Route::get('/', 'HomeController@index');
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+
 
 #Route::auth();
 // Authentication Routes...
@@ -35,7 +23,8 @@ Route::post('password/reset', 'Auth\PasswordController@reset');
 Route::resource('orders', 'OrdersController', ['except' => [
     'show',
 ]]);
-Route::get('orders/{orders}/printer', 'OrdersController@printer')->name('orders.printer');
+Route::get('orders/{orders}/print-order', 'OrdersController@printOrder')->name('orders.print_order');
+Route::get('orders/{orders}/print-service', 'OrdersController@printService')->name('orders.print_service');
 Route::get('orders/template', 'OrdersController@template')->name('orders.template');
 
 

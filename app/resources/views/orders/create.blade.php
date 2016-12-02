@@ -56,7 +56,7 @@
 <link href="{{ url('/public/libs/jquery-ui/1.11.4/jquery-ui.min.css') }}" rel='stylesheet' type='text/css'>
 <style>
     form h3 {
-        margin-top: 30px;
+        margin-top: 20px;
         margin-bottom: 0px;
         font-size: 22px;
     }

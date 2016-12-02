@@ -1,6 +1,16 @@
 
 <div class="col-sm-12">
 
+    @if ($order)
+        <div class="row">
+            <div class="col-sm-12">
+                <span class="help-block pull-right">
+                    <a class="btn btn-default" href="{{ route('orders.print_order', $order->id) }}" ><i class="fa fa-print" "></i> drukuj</a>
+                </span>
+            </div>
+        </div>
+    @endif
+
     <div class="row">
         <div class="col-sm-6">
             <div class="form-group{{ $errors->has('number') ? ' has-error' : '' }}">

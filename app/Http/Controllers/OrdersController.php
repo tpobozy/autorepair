@@ -81,9 +81,7 @@ class OrdersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(StoreOrderRequest $request)
-    {
-        //dd( $request->request->all() );
-        
+    {        
         $post = $request->request->all();
         $post['date'] = (isset($post['date'])) ? $post['date'] : date('Y-m-d');
         
@@ -215,24 +213,50 @@ class OrdersController extends Controller
     }
 
 
-    public function printer($id)
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function printOrder($id)
     {
         $order = Order::findOrFail($id);
 
         $data = $order->toArray();
         $data['fuel'] = $order->html_fuel();
 
-//        $data = [
-//            'title' => 'Zlecenie ' . $order->number,
-//            'name' => $order->name,
-//        ];
 
-        $pdf = \PDF::loadView('orders.printer', $data);
+        $pdf = \PDF::loadView('orders.print_order', $data);
 
         return $pdf->stream();
     }
 
-    
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function printService($id)
+    {
+        $order = Order::findOrFail($id);
+
+        $data = $order->toArray();
+        $data['fuel'] = $order->html_fuel();
+
+
+        $pdf = \PDF::loadView('orders.print_service', $data);
+
+        return $pdf->stream();
+    }
+
+
+    /**
+     * Display empty template
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function template()
     {
         return view('orders.template');

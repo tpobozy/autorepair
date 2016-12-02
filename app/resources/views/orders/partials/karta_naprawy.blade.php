@@ -1,9 +1,19 @@
 
 <div class="col-sm-12">
+
+    @if ($order)
+        <div class="row">
+            <div class="col-sm-12">
+                <span class="help-block pull-right">
+                    <a class="btn btn-default" href="{{ route('orders.print_service', $order->id) }}" ><i class="fa fa-print" "></i> drukuj</a>
+                </span>
+            </div>
+        </div>
+    @endif
+
     <h3>Opis Naprawy</h3>
     <hr>
-
-
+    
     <div class="row">
 
         <table class="table table-condensed" id="table-services">
