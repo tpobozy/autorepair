@@ -45,6 +45,7 @@ class UpdateOrderRequest extends Request
             'number'        => 'required|unique:orders,number,'. $id .'|max:20',
             'date'          => 'date_format:Y-m-d',
             'symptoms'      => 'max:5000',
+            'review'      => 'max:5000',
         ];
     }
 }
