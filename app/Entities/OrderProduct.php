@@ -8,14 +8,21 @@ class OrderProduct extends Model
 {
     protected $table = 'order_products';
 
-    protected $guarded = ['id'];
-    
+    protected $fillable = [
+        'order_id',
+        'product',
+        'index',
+        'supplier',
+        'purchased_at',
+        'document',
+        'purchased_price',
+        'selling_price',
+    ];
 
     public function order()
     {
         return $this->belongsTo('App\Entities\Order');
     }
-    
 
     public function html_purchased_price()
     {

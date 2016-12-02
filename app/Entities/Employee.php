@@ -8,8 +8,11 @@ class Employee extends Model
 {
     protected $table = 'employees';
 
-    protected $guarded = ['id'];
-    
+    protected $fillable = [
+        'firstname',
+        'lastname',
+        'telephone',
+    ];
 
     public function orderService()
     {

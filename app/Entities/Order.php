@@ -8,8 +8,25 @@ class Order extends Model
 {
     protected $table = 'orders';
 
-    protected $guarded = ['id'];
-    
+    protected $fillable = [
+        'name',
+        'address',
+        'nip',
+        'telephone',
+        'make',
+        'model',
+        'license_number',
+        'year',
+        'odometer',
+        'engine_size',
+        'radio_code',
+        'vin',
+        'number',
+        'date',
+        'symptoms',
+        'engine_power',
+        'fuel',
+    ];
 
     public function car()
     {
@@ -31,5 +48,4 @@ class Order extends Model
     {
         return ($this->fuel == 'petrol') ? 'benzyna' : 'diesel';
     }
-
 }

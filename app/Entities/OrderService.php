@@ -8,8 +8,11 @@ class OrderService extends Model
 {
     protected $table = 'order_services';
 
-    protected $guarded = ['id'];
-    
+    protected $fillable = [
+        'order_id',
+        'service_id',
+        'price',
+    ];
 
     public function order()
     {
@@ -33,7 +36,6 @@ class OrderService extends Model
             $query->where('order_service_id', '=', $this->id);
         })->count();
     }
-    
 
     public function html_price()
     {

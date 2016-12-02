@@ -8,8 +8,10 @@ class Service extends Model
 {
     protected $table = 'services';
 
-    protected $guarded = ['id'];
-    
+    protected $fillable = [
+        'number',
+        'title',
+    ];
 
     public function order()
     {
