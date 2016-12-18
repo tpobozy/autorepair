@@ -713,9 +713,14 @@ td.change_order_unit_col {
     width: 200px;
     height: 80px;
 }
+.table-podpis td ,
 .table-pieczatka td {
     text-align: center;
     vertical-align: bottom;
+}
+.table-podpis {
+    width: 200px;
+    height: 20px;
 }
 .table-details, 
 .table-details td {
@@ -751,4 +756,7 @@ td.change_order_unit_col {
 }
 .text-bold {
     font-weight: bold;
+}
+.pagebreak {
+    page-break-before: always;
 }
