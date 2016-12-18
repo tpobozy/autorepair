@@ -16,7 +16,7 @@
             <div class="form-group{{ $errors->has('number') ? ' has-error' : '' }}">
                 <label class="col-sm-4 control-label">Nr Zlecenia*</label>
 
-                <div class="col-sm-8">
+                <div class="col-sm-5">
                     <input type="text" class="form-control" name="number" id="number" value="{{ old('number', ($order) ? $order->number : null) }}" required>
 
                     @if ($errors->has('number'))
@@ -52,7 +52,7 @@
     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
         <label class="col-sm-3 control-label">Nazwa / Imię i nazwisko*</label>
 
-        <div class="col-sm-9">
+        <div class="col-sm-5">
             <input type="text" class="form-control input-yellow" name="name" id="name" value="{{ old('name', ($order) ? $order->name : null) }}" required>
 
             @if ($errors->has('name'))
@@ -67,7 +67,7 @@
         <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
             <label class="col-sm-3 control-label">Adres</label>
 
-            <div class="col-sm-9">
+            <div class="col-sm-5">
                 <input type="text" class="form-control" name="address" id="address" value="{{ old('address', ($order) ? $order->address : null) }}">
 
                 @if ($errors->has('address'))
@@ -118,7 +118,7 @@
     <div class="form-group{{ $errors->has('vin') ? ' has-error' : '' }}">
         <label class="col-sm-3 control-label">VIN*</label>
 
-        <div class="col-sm-9">
+        <div class="col-sm-3">
             <input type="text" class="form-control input-yellow" name="vin" id="vin" value="{{ old('vin', ($order) ? $order->vin : null) }}" required>
 
             @if ($errors->has('vin'))
