@@ -138,6 +138,9 @@
                         <td><span class="subtitle">OGLĘDZINY POJAZDU</span></td>
                     </tr>
                     <tr>
+                        <td style="line-height: 10px;">&nbsp;</td>
+                    </tr>
+                    <tr>
                         <td><img src="{{ url('public/img/auto-schemat.jpg') }}" style="width: 700px"></td>
                     </tr>
                     <tr>
@@ -169,6 +172,14 @@
                 <br>
                 
                 <table style="width: 100%;" class="header">
+                    <tr>
+                        <td colspan="2" style="font-size: 8px;">
+                            Przyjmuję do wiadomości, iż serwis nie ponosi odpowiedzialności za wartościowe przedmioty pozostawione w samochodzie
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="line-height: 40px;">&nbsp;</td>
+                    </tr>
                     <tr>
                         <td>
                             <table class="table-podpis" >
